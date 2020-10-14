@@ -110,12 +110,10 @@ void* mezclar(void *data) {
         //creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero).
         struct parametro *mydata = data;
          sem_wait(&mydata->semaforos_param.sem_mezclar);
-	for(int cont=0;cont<segunda;cont++){
 	//llamo a la funcion imprimir le paso el struct y la accion de la funcion
         imprimirAccion(mydata,accion);
         //uso sleep para simular que que pasa tiempo
         usleep( 1000000 );
-	}
         //doy la senal a la siguiente accion (cortar me habilita mezclar)
     	sem_post(&mydata->semaforos_param.sem_salar);
 
@@ -129,12 +127,10 @@ void* salar(void *data) {
         //creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero).
         struct parametro *mydata = data;
          sem_wait(&mydata->semaforos_param.sem_salar);
-	for(int cont=0;cont<segunda;cont++){
         //llamo a la funcion imprimir le paso el struct y la accion de la funcion
         imprimirAccion(mydata,accion);
         //uso sleep para simular que que pasa tiempo
         usleep( 1000000 );
-	}
         //doy la senal a la siguiente accion (cortar me habilita mezclar)
         sem_post(&mydata->semaforos_param.sem_armar);
 	//desbloqueo el mutex
@@ -148,12 +144,10 @@ void* armar(void *data) {
         //creo el puntero para pasarle la referencia de memoria (data) del struct pasado por parametro (la cual es un puntero).
         struct parametro *mydata = data;
          sem_wait(&mydata->semaforos_param.sem_armar);
-	for(int cont=0;cont<segunda;cont++){
         //llamo a la funcion imprimir le paso el struct y la accion de la funcion
         imprimirAccion(mydata,accion);
         //uso sleep para simular que que pasa tiempo
         usleep( 1000000 );
-        }
 	 //doy la senal a la siguiente accion (cortar me habilita mezclar)
         sem_post(&mydata->semaforos_param.sem_cocinar);
 
@@ -281,7 +275,7 @@ void* ejecutarReceta(void *i) {
 	//setear demas semaforos al struct aqui
 	
 
-	//seteo las acciones y los ingredientes (Faltan acciones e ingredientes) ¿Se ve hardcodeado no? ¿Les parece bien?
+	//seteo las acciones y los ingredientes (Faltan acciones e ingredientes) Â¿Se ve hardcodeado no? Â¿Les parece bien?
 
      	FILE* miarchivo=NULL;
 	char* nombrearchivo="receta.txt";
