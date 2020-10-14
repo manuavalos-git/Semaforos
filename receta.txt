@@ -1,7 +1,7 @@
 cortar
-	ajo-perejil-cebolla
+	2 dientes de ajo-puñado de perejil- 1 cebolla
 mezclar
-	ajo-perejil-cebolla-carne picada
+	ajo-perejil-cebolla- medio de carne picada
 salar
 	mezcla
 armar
@@ -11,7 +11,7 @@ cocinar
 hornear
 	panes
 cortarExtras
-	lechuga-tomate
+	lechuga fresca-tomate
 terminar
 	hamburguesas
 
