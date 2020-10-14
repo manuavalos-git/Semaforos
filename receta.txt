@@ -1,0 +1,17 @@
+cortar
+	ajo-perejil-cebolla
+mezclar
+	ajo-perejil-cebolla-carne picada
+salar
+	mezcla
+armar
+	medallones
+cocinar
+	medallones
+hornear
+	panes
+cortarExtras
+	lechuga-tomate
+terminar
+	hamburguesa
+
