@@ -1,0 +1,61 @@
+﻿Semaforo:
+    sem_t sem_mezclar=0,1,0,0,0,0,0
+    sem_t sem_salar=0,0,1,0,0,0,0
+    sem_t sem_armar=0,0,0,1,0,0,0
+    sem_t sem_cocinar=0,0,0,0,1,0,0
+    sem_t sem_terminar=0,1,0,0,0,0,0
+    sem_t sem_terminar2=0,1,0,0,0,0,0
+    sem_t sem_terminar3=0;0,0,0,0,1,0
+Mutex:
+mutex salero= 1,1,0,1,1,1,1
+mutex horno= 1,0,1,1,1,1,1
+mutex plancha=1,1,1,1,0,1,1
+
+
+Pasos:
+
+
+| cortar |
+v(sem_mezcla)
+
+
+p(sem_mezcla)
+ |mezclar|
+v(sem_salar)
+
+
+p(sem_salar)
+lock(mutex salero)
+|salar|
+ v(sem_armar)
+unlock(mutex_salero)
+
+
+p(sem_armar)
+ |armar|
+v(sem_cocinar
+
+
+p(sem_cocinar)
+lock(mutex_plancha)
+|cocinar|
+unlock(mutex_plancha)
+
+
+----------------------------------------------------------------------------------------------------------------
+ lock(mutex_horno)
+|hornear|
+v(sem_terminar)
+unlock(mutex_horno)
+
+
+------------------------------------------------------------------------------------------------------------------
+|cortarExtras|
+v(sem_terminar2)
+
+
+-----------------------------------------------------------------------------------------------------------------
+p(sem_terminar)
+p(sem_terminar2)
+p(sem_terminar3)
+|terminar|
