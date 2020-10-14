@@ -5,13 +5,13 @@ mezclar
 salar
 	mezcla
 armar
-	medallones
+	medallon
 cocinar
-	medallones
+	medallon
 hornear
 	panes
 cortarExtras
 	lechuga-tomate
 terminar
-	hamburguesa
+	hamburguesas
 
